@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"github.com/dusnm/quiz/pkg/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/template/html"
@@ -28,9 +29,7 @@ func main() {
 		Browse:     false,
 	}))
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Render("views/home", fiber.Map{})
-	})
+	routes.Setup(app)
 
 	log.Fatal(app.Listen(":3000"))
 }
