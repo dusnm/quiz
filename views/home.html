@@ -1,2 +1,15 @@
-<h1>Hello there</h1>
-<p>This will hopefully be a finished quiz program some time in the future.</p>
+<section class="introduction">
+    <h1>Hello there!</h1>
+    <p>Use the form below to generate a link for the quiz that you can then share with your friends.</p>
+    <p>You and your friends use this link to add questions to the quiz.</p>
+    <p>Optionally, you can password protect the quiz for your convenience.</p>
+    <small>Note: Nothing is encrypted, the password only protects access. It's not a good idea to share sensitive information.</small>
+    <p>Have fun. 🙂</p>
+</section>
+<section class="quiz-form">
+    <form action="/quiz/generate" method="POST">
+        <label for="password">Optional: Password protect your quiz.</label>
+        <input name="password" id="password" type="password">
+        <button>Generate</button>
+    </form>
+</section>
