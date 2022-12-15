@@ -1,11 +1,10 @@
 package home
 
-import "github.com/gofiber/fiber/v2"
-
-func home(ctx *fiber.Ctx) error {
-	return ctx.Render("views/home", fiber.Map{})
-}
+import (
+	"github.com/dusnm/quiz/pkg/handlers/home"
+	"github.com/gofiber/fiber/v2"
+)
 
 func Routes(app *fiber.App) {
-	app.Get("/", home)
+	app.Get("/", home.Index)
 }
